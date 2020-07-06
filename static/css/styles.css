@@ -1,0 +1,99 @@
+.menu {
+  visibility: hidden;
+  position: absolute;
+  opacity: 0;
+  left: 0;
+  right: 0;
+  top: 100%;
+  background: rgba(47,53,79,0.9);
+  height: 100vh;
+  transform: translateY(-50px);
+  transition: 0.3s transform, 0.3s opacity;
+  will-change: transform;
+}
+.menu ul {
+  padding: 0;
+  list-style: none;
+}
+.menu li {
+  border-top: 1px solid var(--grayishBlue);
+}
+.menu li:last-child a {
+  border: 2px solid #fff;
+  border-radius: 5px;
+  margin-top: 1em;
+  padding: 0.7em;
+}
+.menu a {
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  display: block;
+  text-align: center;
+  padding: 1em;
+  letter-spacing: 2px;
+}
+.menu__open {
+  user-select: none;
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  cursor: pointer;
+  background: url("../images/icon-hamburger.svg") no-repeat center;
+}
+.menu__checkbox {
+  display: none;
+}
+.menu__checkbox:checked ~ .header {
+  background: rgba(47,53,79,0.9);
+}
+.menu__checkbox:checked ~ .header .menu__open {
+  background-image: url("../images/icon-close.svg");
+}
+.menu__checkbox:checked ~ .header .header__logo {
+  background: url("../images/logo-bookmark-white.svg") no-repeat center;
+}
+.menu__checkbox:checked ~ .header .menu {
+  transform: translateY(0);
+  visibility: visible;
+  opacity: 1;
+}
+.header {
+  background: #fff;
+  position: sticky;
+  padding: 1.5em 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  transition: 0.3s background;
+}
+.header__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header__logo {
+  display: inline-flex;
+  width: 150px;
+  height: 40px;
+  background: url("../images/logo-bookmark.svg") no-repeat center;
+  background-size: contain;
+}
+:root {
+  --softBlue: #5368df;
+  --softRed: #fa5757;
+  --grayishBlue: #9194a1;
+  --veryDarkBlue: #252b46;
+}
+body {
+  background: #d3d3d3;
+  font-family: 'Rubik', sans-serif;
+  color: var(--veryDarkBlue);
+  margin: 0;
+  font-size: 18px;
+}
+.u-wrapper {
+  max-width: 1280px;
+  margin: auto;
+  padding: 0 1em;
+}
